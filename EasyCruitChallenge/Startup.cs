@@ -27,17 +27,10 @@ namespace EasyCruitChallenge
         {
             services.AddControllers();
 
-//#if DEBUG
-//            services.AddSpaStaticFiles(configuration =>
-//            {
-//                configuration.RootPath = "ClientApp/dist";
-//            });
-//#else
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "clientapp/dist";
             });
-//#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
