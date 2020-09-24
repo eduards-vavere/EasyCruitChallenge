@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyCruitChallenge", "EasyCruitChallenge\EasyCruitChallenge.csproj", "{67643A28-ADCE-452D-ACAB-591ECAB408B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyCruitChallenge", "EasyCruitChallenge\EasyCruitChallenge.csproj", "{67643A28-ADCE-452D-ACAB-591ECAB408B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyCruitChallenge.Tests", "EasyCruitChallenge.Tests\EasyCruitChallenge.Tests.csproj", "{B7018BAC-6824-49BD-A574-A88DBBB818C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{67643A28-ADCE-452D-ACAB-591ECAB408B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67643A28-ADCE-452D-ACAB-591ECAB408B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67643A28-ADCE-452D-ACAB-591ECAB408B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7018BAC-6824-49BD-A574-A88DBBB818C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7018BAC-6824-49BD-A574-A88DBBB818C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7018BAC-6824-49BD-A574-A88DBBB818C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7018BAC-6824-49BD-A574-A88DBBB818C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
