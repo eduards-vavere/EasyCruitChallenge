@@ -10,7 +10,7 @@ namespace EasyCruitChallenge.Logic
         /// Creates a new candidate in the database.
         /// </summary>
         /// <param name="candidate">Candidate to be created.</param>
-        Task<Candidate> Create(Candidate candidate);
+        Candidate Create(Candidate candidate);
 
         /// <summary>
         /// Gets a candidate by ID.

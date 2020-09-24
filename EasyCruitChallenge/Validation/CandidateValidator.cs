@@ -8,7 +8,6 @@ namespace EasyCruitChallenge.Validation
     {
         public CandidateValidator()
         {
-            RuleFor(m => m.CandidateId).NotNull().WithMessage("Please specify an ID.");
             RuleFor(m => m.FirstName).NotNull().WithMessage("Please specify a first name.");
             RuleFor(m => m.LastName).NotNull().WithMessage("Please specify a last name.");
             RuleFor(m => m.Email).NotNull().WithMessage("Please specify an email.");

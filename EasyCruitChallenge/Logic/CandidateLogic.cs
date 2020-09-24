@@ -25,9 +25,10 @@ namespace EasyCruitChallenge.Logic
         /// Creates a new candidate in the database.
         /// </summary>
         /// <param name="candidate">Candidate to be created.</param>
-        public async Task<Candidate> Create(Candidate candidate)
+        public Candidate Create(Candidate candidate)
         {
-            var success = await _repository.Create(candidate);
+            candidate.CandidateId = null;
+            var success = _repository.Create(candidate);
 
             // In a real world scenario I would use Hangfire. I have experience using Hangfire for years at work.
             var fileName = $"candidate{candidate.CandidateId}.txt";
@@ -39,9 +40,9 @@ namespace EasyCruitChallenge.Logic
                 Path = $"{_webHostEnvironment.WebRootPath}/{fileName}"
             };
 
-            ThreadPool.QueueUserWorkItem(info =>
-            {
-                File.WriteAllText(info.Path, info.Candidate.MotivationLetterText);
+            ThreadPool.QueueUserWorkItem(info => { 
+                // Would be enabled in real world scenario
+                //File.WriteAllText(info.Path, info.Candidate.MotivationLetterText);
 
             }, state, preferLocal: true);
 

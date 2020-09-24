@@ -13,7 +13,7 @@ namespace EasyCruitChallenge.Models
         /// <summary>
         /// Candidate identifier.
         /// </summary>
-        public int CandidateId { get; set; }
+        public int? CandidateId { get; set; }
 
         /// <summary>
         /// First name.

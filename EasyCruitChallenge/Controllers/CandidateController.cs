@@ -22,11 +22,11 @@ namespace EasyCruitChallenge.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Create([FromBody] Candidate candidate)
+        public IActionResult Create([FromBody] Candidate candidate)
         {
             if (candidate.IsValid(out IEnumerable<string> errors))
             {
-                var result = await _candidateLogic.Create(candidate);
+                var result = _candidateLogic.Create(candidate);
 
                 return new ObjectResult(result) { StatusCode = StatusCodes.Status201Created };
             }

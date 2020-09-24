@@ -21,13 +21,13 @@ namespace EasyCruitChallenge.DataAccess
         /// Creates a new candidate.
         /// </summary>
         /// <param name="candidate">Candidate to be created.</param>
-        public async Task<bool> Create(Candidate candidate)
+        public bool Create(Candidate candidate)
         {
             var success = false;
 
             _databaseContext.Candidates.Add(candidate);
 
-            var numberOfItemsCreated = await _databaseContext.SaveChangesAsync();
+            var numberOfItemsCreated = _databaseContext.SaveChanges();
 
             if (numberOfItemsCreated == 1)
                 success = true;

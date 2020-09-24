@@ -47,10 +47,10 @@ namespace EasyCruitChallenge.Tests.Controllers
             };
 
             _candidateLogicMock.Setup(x => x.Create(It.IsAny<Candidate>()))
-                .Returns(Task.FromResult(candidate));
+                .Returns(candidate);
 
             // Act  
-            var result = _target.Create(candidate).Result;
+            var result = _target.Create(candidate);
 
             // Assert
             Assert.That(result, Is.Not.Null);
@@ -74,10 +74,10 @@ namespace EasyCruitChallenge.Tests.Controllers
             };
 
             _candidateLogicMock.Setup(x => x.Create(It.IsAny<Candidate>()))
-                .Returns(Task.FromResult(candidate));
+                .Returns(candidate);
 
             // Act  
-            var result = _target.Create(candidate).Result;
+            var result = _target.Create(candidate);
 
             // Assert 
             Assert.That(result, Is.Not.Null);
