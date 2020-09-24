@@ -2,4 +2,4 @@
 
 Here are instructions for deploying on Azure and administration using AzureDevops.
 
-![Drag Racing](https://i.imgur.com/0L1Rsn7.png)
+![Visual Studio](https://i.imgur.com/0L1Rsn7.png)
