@@ -3,6 +3,10 @@
 Demo here:
 http://easycruitchallenge-dev-as.azurewebsites.net/
 
+![Demo](https://i.imgur.com/1J9Bya8.png)
+
+# Deploy setup
+
 Here are instructions for deploying on Azure and administration using AzureDevops.
 
 You need to setup automatic deployment on Azure using this step. You will be prompted your Azure credentials and that is it.
