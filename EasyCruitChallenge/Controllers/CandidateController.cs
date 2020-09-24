@@ -39,9 +39,9 @@ namespace EasyCruitChallenge.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Delete(int id)
+        public IActionResult Delete(int id)
         {
-            var success = await _candidateLogic.Delete(id);
+            var success = _candidateLogic.Delete(id);
 
             if (success)
             {

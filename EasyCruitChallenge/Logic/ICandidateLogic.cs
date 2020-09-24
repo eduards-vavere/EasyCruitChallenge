@@ -27,6 +27,6 @@ namespace EasyCruitChallenge.Logic
         /// Deletes a candidate.
         /// </summary>
         /// <param name="candidateId">Candidate ID.</param>
-        Task<bool> Delete(int candidateId);
+        bool Delete(int candidateId);
     }
 }

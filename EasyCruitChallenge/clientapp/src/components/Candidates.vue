@@ -54,8 +54,8 @@
             <th scope="row">{{ candidate.firstName }}</th>
             <td>{{ candidate.lastName }}</td>
             <td>{{ candidate.email }}</td>
-            <td><a href="#">Delete</a></td>
-            <td><a :href="candidate.motivationLetterLink">See motivational letter</a></td>
+            <td><a href="#" @click="deleteCandidate(candidate)">Delete</a></td>
+            <td><a href="#" @click="seeLetter(candidate)">See motivational letter</a></td>
           </tr>
         </tbody>
       </table>
@@ -89,11 +89,8 @@ export default {
             };
 
             axios.post('api/candidates', candidate).then((response) => {
-              if (response.data === null) {
-                // DataContext in API is sometimes failing to return the variable, altough it saves it in the DB
-                // I don't want to spend any more time on this challenge, so this is a workaround
-                // In real life scenario I would debug it deeper and find out what's the cause :D
-                // location.reload();
+              if (response.data === '') {
+                location.reload();
               }
 
               console.log(response);
@@ -110,6 +107,24 @@ export default {
             this.letter = null;
             this.validation.reset();
           }
+        });
+    },
+    seeLetter(candidate) {
+      alert(`Background file upload code is written in API. It is disabled here due to Azure saving on disk in free subscription. The path to file on disk would be: ${candidate.motivationLetterLink}`);
+    },
+    deleteCandidate(candidate) {
+      const that = this;
+      axios
+        .delete(`api/candidates/${candidate.candidateId}`)
+        .then((response) => {
+          const index = that.candidates.indexOf(candidate);
+          if (index > -1) {
+            that.candidates.splice(index, 1);
+          }
+        })
+        .catch((e) => {
+          alert(e);
+          console.error(e);
         });
     },
   },

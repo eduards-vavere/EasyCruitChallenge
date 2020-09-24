@@ -27,8 +27,7 @@ namespace EasyCruitChallenge.Logic
         /// <param name="candidate">Candidate to be created.</param>
         public Candidate Create(Candidate candidate)
         {
-            candidate.CandidateId = null;
-            var success = _repository.Create(candidate);
+            var success = _repository.Create(candidate).Result;
 
             // In a real world scenario I would use Hangfire. I have experience using Hangfire for years at work.
             var fileName = $"candidate{candidate.CandidateId}.txt";
@@ -73,7 +72,7 @@ namespace EasyCruitChallenge.Logic
         /// Deletes a candidate.
         /// </summary>
         /// <param name="candidateId">Candidate ID.</param>
-        public async Task<bool> Delete(int candidateId)
+        public bool Delete(int candidateId)
         {
             var fileName = $"candidate{candidateId}.txt";
 
@@ -84,11 +83,12 @@ namespace EasyCruitChallenge.Logic
 
             ThreadPool.QueueUserWorkItem(info =>
             {
-                File.Delete(info.Path);
+                // Would be enabled in real world scenario
+                // File.Delete(info.Path);
 
             }, state, preferLocal: true);
 
-            return await _repository.Delete(candidateId);
+            return _repository.Delete(candidateId).Result;
         }
     }
 }

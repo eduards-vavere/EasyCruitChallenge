@@ -10,7 +10,7 @@ namespace EasyCruitChallenge.DataAccess
         /// Creates a new candidate.
         /// </summary>
         /// <param name="candidate">Candidate to be created.</param>
-        bool Create(Candidate candidate);
+        Task<bool> Create(Candidate candidate);
 
         /// <summary>
         /// Gets a candidate by candidate ID.

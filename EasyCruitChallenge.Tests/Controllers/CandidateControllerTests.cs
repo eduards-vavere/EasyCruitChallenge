@@ -98,10 +98,10 @@ namespace EasyCruitChallenge.Tests.Controllers
             int goodId = 10;
 
             _candidateLogicMock.Setup(x => x.Delete(It.IsAny<int>()))
-                .Returns(Task.FromResult(true));
+                .Returns(true);
 
             // Act  
-            var result = _target.Delete(goodId).Result;
+            var result = _target.Delete(goodId);
 
             // Assert
             Assert.That(result, Is.Not.Null);
@@ -115,10 +115,10 @@ namespace EasyCruitChallenge.Tests.Controllers
             int badId = 99999;
 
             _candidateLogicMock.Setup(x => x.Delete(It.IsAny<int>()))
-                .Returns(Task.FromResult(false));
+                .Returns(false);
 
             // Act  
-            var result = _target.Delete(badId).Result;
+            var result = _target.Delete(badId);
 
             // Assert
             Assert.That(result, Is.Not.Null);
