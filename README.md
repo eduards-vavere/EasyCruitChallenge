@@ -1,5 +1,8 @@
 # EasyCruitChallenge
 
+Demo here:
+http://easycruitchallenge-dev-as.azurewebsites.net/
+
 Here are instructions for deploying on Azure and administration using AzureDevops.
 
 You need to setup automatic deployment on Azure using this step. You will be prompted your Azure credentials and that is it.
@@ -18,4 +21,6 @@ Tests are run, if there are fails - build fails.
 ![Pic5](https://i.imgur.com/VYRWqmE.png)
 
 To get a JS SPA working on Azure you need to additional build steps - npm install, npm build, and copy from js dist to output.
+
+
 ![Pic6](https://i.imgur.com/tgXxdI5.png)
